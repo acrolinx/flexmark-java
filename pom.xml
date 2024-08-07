@@ -85,7 +85,7 @@
 
     <properties>
         <sonar.organization>acrolinx</sonar.organization>
-        <sonar.projectKey>acrolinx-flexmark-java</sonar.projectKey>
+        <sonar.projectKey>acrolinx_flexmark-java</sonar.projectKey>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
