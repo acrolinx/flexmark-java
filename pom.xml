@@ -86,7 +86,7 @@
     <properties>
         <sonar.organization>acrolinx</sonar.organization>
         <sonar.projectKey>acrolinx-flexmark-java</sonar.projectKey>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputTimestamp>1684437041</project.build.outputTimestamp>
         <flexmark.javadoc.location>${project.basedir}/target/apidocs/</flexmark.javadoc.location>
