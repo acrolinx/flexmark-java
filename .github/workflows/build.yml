@@ -21,13 +21,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-
       - name: Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
-        run: ./gradlew jacocoTestReport sonar
+        run: mvn verify sonar:sonar
 
   Build:
     runs-on: ubuntu-latest
