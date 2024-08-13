@@ -81,6 +81,7 @@
         <module>flexmark-all</module>
         <module>flexmark-osgi</module>
         <module>flexmark-docx-converter</module>
+        <module>flexmark-coverage</module>
     </modules>
 
     <properties>
@@ -267,9 +268,8 @@
                             </execution>
                             <execution>
                                 <id>report</id>
-                                <phase>verify</phase>
                                 <goals>
-                                    <goal>report-aggregate</goal>
+                                    <goal>report</goal>
                                 </goals>
                             </execution>
                         </executions>
