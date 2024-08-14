@@ -271,6 +271,16 @@
             <artifactId>flexmark-test-util</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.vladsch.flexmark</groupId>
+            <artifactId>flexmark-ext-spec-example</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vladsch.flexmark</groupId>
+            <artifactId>flexmark-ext-zzzzzz</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
