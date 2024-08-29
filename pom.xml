@@ -183,11 +183,6 @@
             </dependency>
             <dependency>
                 <groupId>com.acrolinx.flexmark</groupId>
-                <artifactId>flexmark-docx-converter</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acrolinx.flexmark</groupId>
                 <artifactId>flexmark-ext-abbreviation</artifactId>
                 <version>${project.version}</version>
             </dependency>
