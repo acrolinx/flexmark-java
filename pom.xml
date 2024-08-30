@@ -118,7 +118,6 @@
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
-
             </plugins>
         </pluginManagement>
         <plugins>
