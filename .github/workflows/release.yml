@@ -21,6 +21,8 @@ jobs:
           distribution: 'temurin'
 
       - name: Release with Maven
+        run: git config --global user.email "danjelaluraa@gmail.com"
+        run: git config --global user.name "Danjela Lura"
         run: mvn clean -B -Dusername=$GIT_USER_NAME -Dpassword=GITHUB_TOKEN release:prepare release:perform
         env:
           GIT_USER_NAME: acrolinx-opensource
