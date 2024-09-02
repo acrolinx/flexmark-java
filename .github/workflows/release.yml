@@ -36,7 +36,7 @@ jobs:
           git config --global user.email GIT_USER_EMAIL
           git config --global user.name GIT_USER_NAME
           git checkout -b $PR_BRANCH_NAME
-          mvn clean -B -Dusername=$GIT_USER_NAME -Dpassword=GITHUB_TOKEN release:prepare release:perform
+          mvn -s .m2/settings.xml -B -Dusername=$GIT_USER_NAME -Dpassword=GITHUB_TOKEN release:prepare release:perform
         env:
           PR_BRANCH_NAME: ${{ steps.createPrBranchName.outputs.PR_BRANCH_NAME }}
           GIT_USER_NAME: acrolinx-opensource
