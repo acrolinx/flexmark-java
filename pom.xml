@@ -26,7 +26,6 @@
     <module>flexmark-ext-tables</module>
     <module>flexmark-ext-yaml-front-matter</module>
     <module>flexmark-test-util</module>
-    <module>flexmark-util</module>
     <module>flexmark-util-ast</module>
     <module>flexmark-util-builder</module>
     <module>flexmark-util-collection</module>
@@ -115,11 +114,6 @@
       <dependency>
         <groupId>com.acrolinx.flexmark</groupId>
         <artifactId>flexmark-test-util</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.acrolinx.flexmark</groupId>
-        <artifactId>flexmark-util</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
