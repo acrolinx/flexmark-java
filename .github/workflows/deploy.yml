@@ -18,6 +18,5 @@ jobs:
       - name: Build with Maven
         run: mvn clean deploy
         env:
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
