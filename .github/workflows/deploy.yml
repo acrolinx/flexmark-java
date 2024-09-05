@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
           
       - name: Build with Maven
-        run: mvn clean verify deploy
+        run: mvn clean deploy
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
