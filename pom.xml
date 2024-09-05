@@ -254,6 +254,10 @@
             <goals>
               <goal>sign</goal>
             </goals>
+            <configuration>
+              <keyname>${gpg.passphrase}</keyname>
+              <passphraseServerId>${gpg.passphrase}</passphraseServerId>
+            </configuration>
             <phase>verify</phase>
           </execution>
         </executions>
