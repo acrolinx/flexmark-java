@@ -21,6 +21,13 @@
     </license>
   </licenses>
 
+  <developers>
+    <developer>
+      <name>Acrolinx</name>
+      <email>opensource@acrolinx.com</email>
+    </developer>
+  </developers>
+
   <modules>
     <module>flexmark</module>
     <module>flexmark-core-test</module>
