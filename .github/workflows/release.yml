@@ -36,6 +36,8 @@ jobs:
           GIT_USER_NAME: acrolinx-opensource
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAVEN_GPG_KEY: ${{ secrets.CODE_SIGNING_PRIV_KEY }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.CODE_SIGNING_PWD }}
         run: |
           git config user.email opensource@acrolinx.com
           git config user.name $GIT_USER_NAME
