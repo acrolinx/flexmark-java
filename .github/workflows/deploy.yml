@@ -20,5 +20,5 @@ jobs:
         env:
           MAVEN_GPG_KEY: ${{ secrets.CODE_SIGNING_PRIV_KEY }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.CODE_SIGNING_PWD }}
-          SONATYPE_USERNAME: ${{secrets.SONATYPE_USERNAME}}
-          SONATYPE_PW: ${{secrets.SONATYPE_PW}}
+          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+          SONATYPE_PW: ${{ secrets.SONATYPE_PW }}
