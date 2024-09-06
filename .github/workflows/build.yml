@@ -41,7 +41,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn clean install -Dgpg.signer=bc
+        run: mvn clean install -P sign -Dgpg.signer=bc
         env:
           MAVEN_GPG_KEY: ${{ secrets.CODE_SIGNING_PRIV_KEY }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.CODE_SIGNING_PWD }}
