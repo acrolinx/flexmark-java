@@ -9,7 +9,7 @@
 
   <packaging>pom</packaging>
   <name>flexmark-java</name>
-  <description> CommonMark/Markdown Java parser </description>
+  <description>CommonMark/Markdown Java parser</description>
   <url>https://github.com/acrolinx/flexmark-java</url>
 
   <licenses>
