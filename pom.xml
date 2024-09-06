@@ -8,6 +8,10 @@
   <version>0.70.1-SNAPSHOT</version>
 
   <packaging>pom</packaging>
+  <name>flexmark-java</name>
+  <description>Fork of the original flexmark-java project.
+    Java re-implementation of commonmark-java based parser, with AST reflecting source elements, full source position tracking, greater parser extensibility.</description>
+  <url>https://github.com/acrolinx/flexmark-java</url>
 
   <licenses>
     <license>
