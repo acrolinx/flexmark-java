@@ -537,17 +537,17 @@ public class OrderedMultiMapTest {
     CollectionHostValidator<Paired<String, Integer>> validator = new CollectionHostValidator<>();
     final OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>(validator.getHost());
 
-    validator.reset().expectAdding(0, Pair.of("0", 0), null).test(() -> orderedMap.put("0", 0));
+    validator.reset().expectAdding(0, new Pair<>("0", 0), null).test(() -> orderedMap.put("0", 0));
 
-    validator.reset().expectAdding(1, Pair.of("1", 1), null).test(() -> orderedMap.put("1", 1));
+    validator.reset().expectAdding(1, new Pair<>("1", 1), null).test(() -> orderedMap.put("1", 1));
 
     for (int j = 0; j < 2; j++) {
       final int finalJ = j;
       validator
           .reset()
           .id(j)
-          .expectRemoving(j, Pair.of(String.valueOf(j), (Integer) null))
-          .expectRemoving(j, Pair.of((String) null, j))
+          .expectRemoving(j, new Pair<>(String.valueOf(j), (Integer) null))
+          .expectRemoving(j, new Pair<>((String) null, j))
           .repeat(2)
           .onCond(j == 1)
           .expectClearing()
