@@ -14,7 +14,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.put(String.valueOf(i), i));
+      Assert.assertNull(orderedMap.put(String.valueOf(i), i));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
@@ -47,7 +47,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.put(String.valueOf(i), i));
+      Assert.assertNull(orderedMap.put(String.valueOf(i), i));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
@@ -103,7 +103,7 @@ public class OrderedMultiMapTest {
     OrderedSet<String> retainSet = new OrderedSet<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.put(String.valueOf(i), i));
+      Assert.assertNull(orderedMap.put(String.valueOf(i), i));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
@@ -146,7 +146,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.put(String.valueOf(i), i));
+      Assert.assertNull(orderedMap.put(String.valueOf(i), i));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
@@ -186,7 +186,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.put(String.valueOf(i), i));
+      Assert.assertNull(orderedMap.put(String.valueOf(i), i));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
@@ -227,7 +227,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.put(String.valueOf(i), i));
+      Assert.assertNull(orderedMap.put(String.valueOf(i), i));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
@@ -272,7 +272,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.put(String.valueOf(i), i));
+      Assert.assertNull(orderedMap.put(String.valueOf(i), i));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
@@ -319,7 +319,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.putValueKey(i, String.valueOf(i)));
+      Assert.assertNull(orderedMap.putValueKey(i, String.valueOf(i)));
       Assert.assertEquals(String.valueOf(i), orderedMap.putValueKey(i, String.valueOf(i)));
     }
 
@@ -352,7 +352,7 @@ public class OrderedMultiMapTest {
     OrderedMultiMap<String, Integer> orderedMap = new OrderedMultiMap<>();
 
     for (int i = 0; i < 10; i++) {
-      Assert.assertEquals(null, orderedMap.putValueKey(i, String.valueOf(i)));
+      Assert.assertNull(orderedMap.putValueKey(i, String.valueOf(i)));
       Assert.assertEquals((Integer) i, orderedMap.put(String.valueOf(i), i));
     }
 
