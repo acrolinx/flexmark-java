@@ -9,7 +9,6 @@
   </parent>
 
   <artifactId>flexmark-coverage</artifactId>
-  <name>flexmark-java coverage</name>
   <description>An aggregator of all Jacoco test reports</description>
 
   <dependencies>
