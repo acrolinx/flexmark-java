@@ -49,7 +49,17 @@
     </dependency>
     <dependency>
       <groupId>com.acrolinx.flexmark</groupId>
+      <artifactId>flexmark-integration-test</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.acrolinx.flexmark</groupId>
       <artifactId>flexmark-test-util</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.acrolinx.flexmark</groupId>
+      <artifactId>flexmark-util</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -90,11 +100,6 @@
     <dependency>
       <groupId>com.acrolinx.flexmark</groupId>
       <artifactId>flexmark-util-misc</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.acrolinx.flexmark</groupId>
-      <artifactId>flexmark-util-options</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
