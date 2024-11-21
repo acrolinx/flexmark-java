@@ -21,6 +21,7 @@
       <groupId>com.acrolinx.flexmark</groupId>
       <artifactId>flexmark-core-test</artifactId>
       <version>${project.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.acrolinx.flexmark</groupId>
@@ -51,11 +52,13 @@
       <groupId>com.acrolinx.flexmark</groupId>
       <artifactId>flexmark-integration-test</artifactId>
       <version>${project.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.acrolinx.flexmark</groupId>
       <artifactId>flexmark-test-util</artifactId>
       <version>${project.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.acrolinx.flexmark</groupId>
