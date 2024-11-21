@@ -97,6 +97,7 @@
       <artifactId>flexmark-util-visitor</artifactId>
       <version>${project.version}</version>
     </dependency>
+
     <dependency>
       <groupId>com.acrolinx.flexmark</groupId>
       <artifactId>flexmark-core-test</artifactId>
