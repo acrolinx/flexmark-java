@@ -19,29 +19,12 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Create release version name
-        id: createReleaseVersionName
-        run: echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')" >> "$GITHUB_OUTPUT"
-
-      - name: Create PR Branch Name
-        id: createPrBranchName
+      - name: Create GitHub PR
         env:
-          RELEASE_VERSION: ${{ steps.createReleaseVersionName.outputs.RELEASE_VERSION }}
+          GH_TOKEN: ${{ secrets.PAT }}
+          RELEASE_VERSION: '123'
+          CHECKOUT_BRANCH_NAME: ${{ github.ref_name }}
+          PR_BRANCH_NAME: 'branch-123'
         run: |
-          echo "PR_BRANCH_NAME=publish-v$RELEASE_VERSION" >> "$GITHUB_OUTPUT"
-
-      - name: Release with Maven
-        env:
-          PR_BRANCH_NAME: ${{ steps.createPrBranchName.outputs.PR_BRANCH_NAME }}
-          GIT_USER_NAME: acrolinx-opensource
-          GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MAVEN_GPG_KEY: ${{ secrets.CODE_SIGNING_PRIV_KEY }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.CODE_SIGNING_PWD }}
-          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          SONATYPE_PW: ${{ secrets.SONATYPE_PW }}
-        run: |
-          git config user.email opensource@acrolinx.com
-          git config user.name $GIT_USER_NAME
-          git checkout -b $PR_BRANCH_NAME
-          mvn -P sign -B -Dusername=$GIT_USER_NAME -Dpassword=$GITHUB_TOKEN -DpreparationGoals="clean spotless:apply verify" -DcompletionGoals="spotless:apply" release:prepare release:perform
+          gh pr create --title "Release $RELEASE_VERSION" --body "" --base "$CHECKOUT_BRANCH_NAME" --reviewer ${{ github.actor }}
+          gh pr merge $PR_BRANCH_NAME --auto --rebase --delete-branch
