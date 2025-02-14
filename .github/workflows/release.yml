@@ -18,6 +18,17 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
+          
+      - name: Create release version name
+        id: createReleaseVersionName
+        run: echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')" >> "$GITHUB_OUTPUT"
+
+      - name: Create PR Branch Name
+        id: createPrBranchName
+        env:
+          RELEASE_VERSION: ${{ steps.createReleaseVersionName.outputs.RELEASE_VERSION }}
+        run: |
+          echo "PR_BRANCH_NAME=publish-v$RELEASE_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub PR
         env:
