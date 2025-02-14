@@ -9,34 +9,28 @@ permissions:
 jobs:
   Release:
     runs-on: ubuntu-latest
+    env:
+      GIT_USER_NAME: acrolinx-opensource
+      GIT_USER_EMAIL: opensource@acrolinx.com
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          
-      - name: Create release version name
-        id: createReleaseVersionName
-        run: echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')" >> "$GITHUB_OUTPUT"
-
-      - name: Create PR Branch Name
-        id: createPrBranchName
-        env:
-          RELEASE_VERSION: ${{ steps.createReleaseVersionName.outputs.RELEASE_VERSION }}
+      - name: Checkout test-branch
         run: |
-          echo "PR_BRANCH_NAME=publish-v$RELEASE_VERSION" >> "$GITHUB_OUTPUT"
+          git config user.name $GIT_USER_NAME
+          git config user.email $GIT_USER_EMAIL
+          git checkout -b test-branch
+          touch file.txt
+          echo "foo" >> file.txt
+          git add file.txt
+          git commit -m "Add file.txt"
+          git push -u origin HEAD
 
       - name: Create GitHub PR
         env:
           GH_TOKEN: ${{ secrets.PAT }}
-          RELEASE_VERSION: ${{ steps.removeSnapshotSuffix.outputs.RELEASE_VERSION }}
-          CHECKOUT_BRANCH_NAME: ${{ github.ref_name }}
-          PR_BRANCH_NAME: ${{ steps.createPrBranchName.outputs.PR_BRANCH_NAME }}
         run: |
           git rev-parse --abbrev-ref HEAD
-          gh pr create --title "Release $RELEASE_VERSION" --body "" --base main --reviewer ${{ github.actor }}
-          gh pr merge $PR_BRANCH_NAME --auto --rebase --delete-branch
+          gh pr create --title "Release $RELEASE_VERSION" --body "" --base main
+          gh pr merge test-branch --auto --rebase --delete-branch
