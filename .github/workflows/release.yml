@@ -37,7 +37,6 @@ jobs:
           CHECKOUT_BRANCH_NAME: ${{ github.ref_name }}
           PR_BRANCH_NAME: ${{ steps.createPrBranchName.outputs.PR_BRANCH_NAME }}
         run: |
-          git checkout -b $PR_BRANCH_NAME
           git rev-parse --abbrev-ref HEAD
           gh pr create --title "Release $RELEASE_VERSION" --body "" --base "$CHECKOUT_BRANCH_NAME" --reviewer ${{ github.actor }}
           gh pr merge $PR_BRANCH_NAME --auto --rebase --delete-branch
