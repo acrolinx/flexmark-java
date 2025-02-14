@@ -27,5 +27,5 @@ jobs:
           PR_BRANCH_NAME: 'branch-123'
         run: |
           echo $CHECKOUT_BRANCH_NAME
-          gh pr create --title "Release $RELEASE_VERSION" --body "" --base main --HEAD $PR_BRANCH_NAME --reviewer ${{ github.actor }}
+          gh pr create --title "Release $RELEASE_VERSION" --body "" --base main --head $PR_BRANCH_NAME --reviewer ${{ github.actor }}
           gh pr merge $PR_BRANCH_NAME --auto --rebase --delete-branch
