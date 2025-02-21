@@ -4,7 +4,7 @@ import com.vladsch.flexmark.util.ast.DelimitedNode;
 import com.vladsch.flexmark.util.ast.Node;
 import com.vladsch.flexmark.util.sequence.BasedSequence;
 
-abstract class DelimitedNodeImpl extends Node implements DelimitedNode {
+public abstract class DelimitedNodeImpl extends Node implements DelimitedNode {
   BasedSequence openingMarker = BasedSequence.NULL;
   BasedSequence text = BasedSequence.NULL;
   BasedSequence closingMarker = BasedSequence.NULL;

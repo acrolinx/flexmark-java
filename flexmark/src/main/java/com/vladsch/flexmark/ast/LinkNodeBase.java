@@ -3,7 +3,7 @@ package com.vladsch.flexmark.ast;
 import com.vladsch.flexmark.util.ast.Node;
 import com.vladsch.flexmark.util.sequence.BasedSequence;
 
-abstract class LinkNodeBase extends Node {
+public abstract class LinkNodeBase extends Node {
   protected BasedSequence urlOpeningMarker = BasedSequence.NULL;
   protected BasedSequence url = BasedSequence.NULL;
   protected BasedSequence pageRef = BasedSequence.NULL;
