@@ -36,7 +36,7 @@ public class DefinitionExtension
 
   private DefinitionExtension() {}
 
-  static DefinitionExtension create() {
+  public static DefinitionExtension create() {
     return new DefinitionExtension();
   }
 

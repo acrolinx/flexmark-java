@@ -68,6 +68,10 @@ public class TaskListExtension
 
   TaskListExtension() {}
 
+  public static TaskListExtension create() {
+    return new TaskListExtension();
+  }
+
   @Override
   public void extend(Formatter.Builder formatterBuilder) {
     formatterBuilder.nodeFormatterFactory(TaskListNodeFormatter::new);

@@ -671,6 +671,12 @@ public abstract class Node {
     if (withExtra) getAstExtra(out);
   }
 
+  public String toAstString(boolean withExtra) {
+    StringBuilder sb = new StringBuilder();
+    astString(sb, withExtra);
+    return sb.toString();
+  }
+
   public BasedSequence getChildChars() {
     if (firstChild == null || lastChild == null) {
       return BasedSequence.NULL;

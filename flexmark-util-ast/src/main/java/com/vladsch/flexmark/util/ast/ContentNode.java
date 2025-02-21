@@ -4,7 +4,7 @@ import com.vladsch.flexmark.util.sequence.BasedSequence;
 import com.vladsch.flexmark.util.sequence.SegmentedSequence;
 import java.util.List;
 
-abstract class ContentNode extends Node implements Content {
+public abstract class ContentNode extends Node implements Content {
   List<BasedSequence> lineSegments = BasedSequence.EMPTY_LIST;
 
   ContentNode() {}
