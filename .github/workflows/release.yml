@@ -30,6 +30,7 @@ jobs:
       - name: Create GitHub PR
         env:
           GH_TOKEN: ${{ secrets.PAT }}
+          GH_DEBUG: api
         run: |
           git rev-parse --abbrev-ref HEAD
           gh pr create --title "Release $RELEASE_VERSION" --body "" --base main --reviewer willynganga
