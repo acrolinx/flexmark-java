@@ -32,5 +32,5 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT }}
         run: |
           git rev-parse --abbrev-ref HEAD
-          gh pr create --title "Release $RELEASE_VERSION" --body "" --base main
+          gh pr create --title "Release $RELEASE_VERSION" --body "" --base main --reviewer willynganga
           gh pr merge test-branch --auto --rebase --delete-branch
