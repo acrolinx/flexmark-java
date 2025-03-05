@@ -18,9 +18,15 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Create release version name
+      - name: Create Release Version Name
         id: createReleaseVersionName
         run: echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')" >> "$GITHUB_OUTPUT"
+
+      - name: Create Tag Name
+        id: createTagName
+        env:
+          RELEASE_VERSION: ${{ steps.createReleaseVersionName.outputs.RELEASE_VERSION }}
+        run: echo "TAG_NAME=v$RELEASE_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Create PR Branch Name
         id: createPrBranchName
@@ -59,5 +65,5 @@ jobs:
       - name: Create Draft Release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG_NAME: ${{ steps.createReleaseVersionName.outputs.RELEASE_VERSION }}
+          TAG_NAME: ${{ steps.createTagName.outputs.TAG_NAME }}
         run: gh release create $TAG_NAME --title $TAG_NAME --verify-tag --draft
