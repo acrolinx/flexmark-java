@@ -13,7 +13,6 @@ import com.vladsch.flexmark.parser.internal.PostProcessorManager;
 import com.vladsch.flexmark.util.ast.Document;
 import com.vladsch.flexmark.util.ast.IParse;
 import com.vladsch.flexmark.util.ast.KeepType;
-import com.vladsch.flexmark.util.ast.Node;
 import com.vladsch.flexmark.util.ast.NodeRepository;
 import com.vladsch.flexmark.util.builder.BuilderBase;
 import com.vladsch.flexmark.util.data.DataHolder;
@@ -597,8 +596,8 @@ public class Parser implements IParse {
     return transferred;
   }
 
-  private static <T extends Node> boolean transferReferences(
-      NodeRepository<T> destination, NodeRepository<T> included, boolean onlyIfUndefined) {
+  private static boolean transferReferences(
+      ReferenceRepository destination, ReferenceRepository included, boolean onlyIfUndefined) {
     return NodeRepository.transferReferences(destination, included, onlyIfUndefined, null);
   }
 
